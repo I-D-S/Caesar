@@ -2,7 +2,7 @@ a = ord('а')
 alphabet = ''.join([chr(i) for i in range(a,a+6)] + [chr(a+33)] +[chr(i) for i in range(a+6,a+32)])
 b_alphabet = alphabet.upper()
 while True:
-    string = input()
+    string = input('Введите текст кириллицей:   ')
     if string == '0':
         break
     decision = int(input('Введите 1 для шифровки -1 для расшифровки:   '))
