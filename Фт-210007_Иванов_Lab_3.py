@@ -1,5 +1,7 @@
+# Создаём список букв
 a = ord('а')
 alphabet = ''.join([chr(i) for i in range(a,a+6)] + [chr(a+33)] +[chr(i) for i in range(a+6,a+32)])
+# Заглавные буквы
 b_alphabet = alphabet.upper()
 while True:
     string = input('Введите текст кириллицей:   ')
@@ -15,10 +17,11 @@ while True:
     except ValueError:
         print('Шаг смещения должен быть целым числом!')
         break
-    output = ''
+    output = ''     #Строка вывода
+    # Заменяем каждую букву на букву с индексом большим на шаг смещения
     for i in range(len(string)):
         try:
-            index = alphabet.index(string[i])
+            index = alphabet.index(string[i])          
             output += alphabet[(index+n*decision)%33]
         except ValueError:
                 try:
