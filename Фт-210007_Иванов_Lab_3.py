@@ -5,8 +5,16 @@ while True:
     string = input('Введите текст кириллицей:   ')
     if string == '0':
         break
-    decision = int(input('Введите 1 для шифровки -1 для расшифровки:   '))
-    n = int(input('Введите шаг смещения:    '))
+    try:
+        decision = int(input('Введите 1 для шифровки -1 для расшифровки:   '))
+        assert decision == 1 or decision == -1
+        n = int(input('Введите шаг смещения(целое число):    '))
+    except AssertionError:
+        print('Неверный шаг расшифровки')
+        break
+    except ValueError:
+        print('Шаг смещения должен быть целым числом!')
+        break
     output = ''
     for i in range(len(string)):
         try:
